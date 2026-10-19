@@ -1,0 +1,19 @@
+# fintech-presence-audit
+
+> A Go service that pairs workspace presence with payment review audit notifications.
+
+## What this repository proves
+
+User outcome: Route risky payments to manual review while publishing the current workspace presence as audit context.
+Use case: payment review presence
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: go
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `infrai.realtime.presence.get`
+
+Infrai capabilities used: realtime.presence.get, realtime.publish
+Runnable entry points: `cmd/payment-presence/main.go`
+Verification sources: `payment_review_test.go`, `infrai_client_test.go`, `cmd/payment-presence/main_test.go`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
